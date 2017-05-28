@@ -1,0 +1,31 @@
+0	hw2sic   START   1000
+1000	num1     WORD    12	00000c
+1003	num2     WORD    16	000010
+1006	two      WORD    2	000002
+1009	one      WORD    1	000001
+100c	zero     WORD    0	000000
+100f	tmp      RESW    1
+1012	total    RESW    1
+1015	main     LDA     zero	00100c
+1018	         STA     total	0c1012
+101b	         LDA     num1	001000
+101e	         DIV     two	241006
+1021	         MUL     two	201006
+1024	         STA     tmp	0c100f
+1027	         LDA     num1	001000
+102a	         SUB     tmp	1c100f
+102d	         COMP    one	281009
+1030	         JEQ     loop	30103c
+1033	         LDA     num1	001000
+1036	         ADD     two	181006
+1039	         STA     num1	0c1000
+103c	loop     LDA     total	001012
+103f	         ADD     num1	181000
+1042	         STA     total	0c1012
+1045	         LDA     num1	001000
+1048	         ADD     two	181006
+104b	         STA     num1	0c1000
+104e	         COMP    num2	281003
+1051	         JGT     break	341057
+1054	         J       loop	3c103c
+1057	break    END     main

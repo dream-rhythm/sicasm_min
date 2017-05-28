@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1495994988 source:c:\users\ÁÂ¹Úæ¢\desktop\sicasm_min\sicasm_min\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<cctype>
+	<string>
+	<cstdlib>
+	<sstream>
+
